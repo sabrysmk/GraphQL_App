@@ -1,0 +1,37 @@
+# project: cj48d7g85idbg01734m6dfp4b
+# version: 1
+
+type Attendee implements Node {
+  conferences: [Conference!]! @relation(name: "Attendees")
+  createdAt: DateTime!
+  id: ID! @isUnique
+  name: String!
+  updatedAt: DateTime!
+}
+
+type Conference implements Node {
+  attendees: [Attendee!]! @relation(name: "Attendees")
+  city: String!
+  createdAt: DateTime!
+  id: ID! @isUnique
+  name: String!
+  updatedAt: DateTime!
+  year: String!
+}
+
+type File implements Node {
+  contentType: String!
+  createdAt: DateTime!
+  id: ID! @isUnique
+  name: String!
+  secret: String! @isUnique
+  size: Int!
+  updatedAt: DateTime!
+  url: String! @isUnique
+}
+
+type User implements Node {
+  createdAt: DateTime!
+  id: ID! @isUnique
+  updatedAt: DateTime!
+}
