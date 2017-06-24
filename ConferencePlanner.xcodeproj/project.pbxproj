@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FFE54781EFE9BAC004B2EBF /* RegisterViewController.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 1FFE54771EFE9BAC004B2EBF /* RegisterViewController.graphql */; };
+		1FFE547B1EFE9CB2004B2EBF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFE54791EFE9C37004B2EBF /* API.swift */; };
 		5588972C1E83CB1900A5E05E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588972B1E83CB1900A5E05E /* AppDelegate.swift */; };
 		558897311E83CB1900A5E05E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5588972F1E83CB1900A5E05E /* Main.storyboard */; };
 		558897331E83CB1900A5E05E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 558897321E83CB1900A5E05E /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1FFE54771EFE9BAC004B2EBF /* RegisterViewController.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = RegisterViewController.graphql; sourceTree = "<group>"; };
+		1FFE54791EFE9C37004B2EBF /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = API.swift; path = ConferencePlanner/API.swift; sourceTree = SOURCE_ROOT; };
 		45DE3CD9034255696F7A60F5 /* Pods-ConferencePlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencePlanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConferencePlanner/Pods-ConferencePlanner.release.xcconfig"; sourceTree = "<group>"; };
 		558897281E83CB1900A5E05E /* ConferencePlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConferencePlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5588972B1E83CB1900A5E05E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 		5588973E1E83CCF500A5E05E /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
+				1FFE54791EFE9C37004B2EBF /* API.swift */,
+				1FFE54771EFE9BAC004B2EBF /* RegisterViewController.graphql */,
 			);
 			path = GraphQL;
 			sourceTree = "<group>";
@@ -162,6 +168,8 @@
 				TargetAttributes = {
 					558897271E83CB1900A5E05E = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = CZAP38JFAE;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -192,6 +200,7 @@
 				558897361E83CB1900A5E05E /* LaunchScreen.storyboard in Resources */,
 				558897331E83CB1900A5E05E /* Assets.xcassets in Resources */,
 				558897311E83CB1900A5E05E /* Main.storyboard in Resources */,
+				1FFE54781EFE9BAC004B2EBF /* RegisterViewController.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +279,7 @@
 				5588972C1E83CB1900A5E05E /* AppDelegate.swift in Sources */,
 				558897501E83CCF500A5E05E /* Utils.swift in Sources */,
 				558897551E83CCF500A5E05E /* ConferenceCell.swift in Sources */,
+				1FFE547B1EFE9CB2004B2EBF /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +403,7 @@
 			baseConfigurationReference = B7FA8169A0EF4D8C4F1FF8EB /* Pods-ConferencePlanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CZAP38JFAE;
 				INFOPLIST_FILE = ConferencePlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.ConferencePlanner;
@@ -406,6 +417,7 @@
 			baseConfigurationReference = 45DE3CD9034255696F7A60F5 /* Pods-ConferencePlanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CZAP38JFAE;
 				INFOPLIST_FILE = ConferencePlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.ConferencePlanner;

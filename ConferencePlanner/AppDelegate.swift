@@ -29,6 +29,11 @@
  */
 
 import UIKit
+import Apollo
+
+let graphQLEndpoint = "https://api.graph.cool/simple/v1/cj48d7g85idbg01734m6dfp4b"
+let apollo = ApolloClient(url: URL(string: graphQLEndpoint)!)
+
 
 var currentUserID: String? {
   get {
