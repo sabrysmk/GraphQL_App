@@ -72,6 +72,8 @@ extension RegisterViewController {
       createAttendee(name: name)
     }
   }
+  
+  
 }
 
 // MARK: - Internal
@@ -80,9 +82,41 @@ extension RegisterViewController {
   func createAttendee(name: String) {
     activityIndicator.startAnimating()
     
+    // 1 Instantiate the mutation with the user provided string.
+    let createAttendeeMutation = CreateAttendeeMutation(name: name)
+    
+    // 2 Use the apollo instance to send the mutation to the API.
+    apollo.perform(mutation: createAttendeeMutation) { [weak self] result, error in
+      self?.activityIndicator.stopAnimating()
+      
+      if let error = error {
+        print(error.localizedDescription)
+        return
+      }
+      
+      // 3 Retrieve the data returned by the server and store it globally as information about the current user.
+      currentUserID = result?.data?.createAttendee?.id
+      currentUserName = result?.data?.createAttendee?.name
+      
+      self?.performSegue(withIdentifier: "ShowConferencesAnimated", sender: nil)
+    }
   }
   
   func updateAttendee(id: String, newName: String) {
-    activityIndicator.startAnimating()    
-  }
-}
+    activityIndicator.startAnimating()
+    
+    let updateAttendeeNameMutation = UpdateAttendeeNameMutation(id: id, newName: newName)
+    apollo.perform(mutation: updateAttendeeNameMutation) { [weak self] result, error in
+      self?.activityIndicator.stopAnimating()
+      
+      if let error = error {
+        print(error.localizedDescription)
+        return
+      }
+      
+      currentUserID = result?.data?.updateAttendee?.id
+      currentUserName = result?.data?.updateAttendee?.name
+      
+      self?.performSegue(withIdentifier: "ShowConferencesAnimated", sender: nil)
+    }
+  }}

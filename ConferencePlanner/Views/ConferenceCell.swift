@@ -43,5 +43,14 @@ class ConferenceCell: UITableViewCell {
       attendingLabel.text = isCurrentUserAttending ? "✅" : "❌"
     }
   }
+  
+  var conference: ConferenceDetails! {
+    didSet {
+      nameLabel.text = "\(conference.name) \(conference.year)"
+      let attendeeCount = conference.numberOfAttendees
+      infoLabel.text =
+      "\(conference.city) (\(attendeeCount) \(attendeeCount == 1 ? "attendee" : "attendees"))"
+    }
+  } 
 
 }

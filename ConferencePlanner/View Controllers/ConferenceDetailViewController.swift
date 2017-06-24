@@ -32,6 +32,24 @@ import UIKit
 import Apollo
 
 class ConferenceDetailViewController: UIViewController {
+  
+  var conference: ConferenceDetails! {
+    didSet {
+      if isViewLoaded {
+        updateUI()
+      }
+    }
+  }
+  
+  var attendees: [AttendeeDetails]? {
+    didSet {
+      attendeesTableView.reloadData()
+    }
+  }
+  
+  var isCurrentUserAttending: Bool {
+    return conference?.isAttendedBy(currentUserID!) ?? false
+  }
 
   // MARK: - IBOutlets
   @IBOutlet weak var nameLabel: UILabel!
@@ -45,6 +63,18 @@ class ConferenceDetailViewController: UIViewController {
     super.viewDidLoad()
 
     title = "Details"
+    
+    let conferenceDetailsQuery = ConferenceDetailsQuery(id: conference.id)
+    apollo.fetch(query: conferenceDetailsQuery) { result, error in
+      guard let conference = result?.data?.conference else { return }
+      self.conference = conference.fragments.conferenceDetails
+    }
+    
+    let attendeesForConferenceQuery = AttendeesForConferenceQuery(conferenceId: conference.id)
+    apollo.fetch(query: attendeesForConferenceQuery) { result, error in
+      guard let conference = result?.data?.conference else { return }
+      self.attendees = conference.attendees?.map { $0.fragments.attendeeDetails }
+    }
   }
 }
 
@@ -59,6 +89,10 @@ extension ConferenceDetailViewController {
 extension ConferenceDetailViewController {
 
   func updateUI() {
+    nameLabel.text = conference.name
+    infoLabel.text = "\(conference.city), \(conference.year)"
+    attendingLabel.text = isCurrentUserAttending ? attendingText : notAttendingText
+    toggleAttendingButton.setTitle(isCurrentUserAttending ? attendingButtonText : notAttendingButtonText, for: .normal)
   }
 }
 
@@ -66,11 +100,18 @@ extension ConferenceDetailViewController {
 extension ConferenceDetailViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 0
+    return attendees?.count ?? 0
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    return UITableViewCell()
+    guard let attendees = self.attendees else { return UITableViewCell() }
+    
+    let cell = tableView.dequeueReusableCell(withIdentifier: "AttendeeCell")!
+    let attendeeDetails = attendees[indexPath.row]
+    cell.textLabel?.text = attendeeDetails.name
+    let otherConferencesCount = attendeeDetails.numberOfConferencesAttending - 1
+    cell.detailTextLabel?.text = "attends \(otherConferencesCount) other conferences"
+    return cell
   }
 
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1FFE54781EFE9BAC004B2EBF /* RegisterViewController.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 1FFE54771EFE9BAC004B2EBF /* RegisterViewController.graphql */; };
 		1FFE547B1EFE9CB2004B2EBF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFE54791EFE9C37004B2EBF /* API.swift */; };
+		1FFE547D1EFEB3BB004B2EBF /* ConferenceTableViewController.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 1FFE547C1EFEB3BB004B2EBF /* ConferenceTableViewController.graphql */; };
+		1FFE547F1EFEB6FC004B2EBF /* ConferenceDetailViewController.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 1FFE547E1EFEB6FC004B2EBF /* ConferenceDetailViewController.graphql */; };
 		5588972C1E83CB1900A5E05E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588972B1E83CB1900A5E05E /* AppDelegate.swift */; };
 		558897311E83CB1900A5E05E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5588972F1E83CB1900A5E05E /* Main.storyboard */; };
 		558897331E83CB1900A5E05E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 558897321E83CB1900A5E05E /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 /* Begin PBXFileReference section */
 		1FFE54771EFE9BAC004B2EBF /* RegisterViewController.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = RegisterViewController.graphql; sourceTree = "<group>"; };
 		1FFE54791EFE9C37004B2EBF /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = API.swift; path = ConferencePlanner/API.swift; sourceTree = SOURCE_ROOT; };
+		1FFE547C1EFEB3BB004B2EBF /* ConferenceTableViewController.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ConferenceTableViewController.graphql; sourceTree = "<group>"; };
+		1FFE547E1EFEB6FC004B2EBF /* ConferenceDetailViewController.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ConferenceDetailViewController.graphql; sourceTree = "<group>"; };
 		45DE3CD9034255696F7A60F5 /* Pods-ConferencePlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencePlanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConferencePlanner/Pods-ConferencePlanner.release.xcconfig"; sourceTree = "<group>"; };
 		558897281E83CB1900A5E05E /* ConferencePlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConferencePlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5588972B1E83CB1900A5E05E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 			children = (
 				1FFE54791EFE9C37004B2EBF /* API.swift */,
 				1FFE54771EFE9BAC004B2EBF /* RegisterViewController.graphql */,
+				1FFE547C1EFEB3BB004B2EBF /* ConferenceTableViewController.graphql */,
+				1FFE547E1EFEB6FC004B2EBF /* ConferenceDetailViewController.graphql */,
 			);
 			path = GraphQL;
 			sourceTree = "<group>";
@@ -197,6 +203,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FFE547D1EFEB3BB004B2EBF /* ConferenceTableViewController.graphql in Resources */,
+				1FFE547F1EFEB6FC004B2EBF /* ConferenceDetailViewController.graphql in Resources */,
 				558897361E83CB1900A5E05E /* LaunchScreen.storyboard in Resources */,
 				558897331E83CB1900A5E05E /* Assets.xcassets in Resources */,
 				558897311E83CB1900A5E05E /* Main.storyboard in Resources */,
